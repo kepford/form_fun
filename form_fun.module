@@ -75,6 +75,27 @@ function form_fun_menu() {
     'file' => 'form_fun.ahah.inc',
     'type' => MENU_CALLBACK,
   );
+  
+  $items['form_fun/death_image'] = array(
+    'page callback' => 'form_fun_death_image',
+    'access callback' => TRUE,
+    'file' => 'form_fun.cake.inc',
+    'type' => MENU_CALLBACK,
+  );
+  
+  $items['form_fun/cake_image'] = array(
+    'page callback' => 'form_fun_cake_image',
+    'access callback' => TRUE,
+    'file' => 'form_fun.cake.inc',
+    'type' => MENU_CALLBACK,
+  );
+  
+  $items['form_fun/chicken_image'] = array(
+    'page callback' => 'form_fun_chicken_image',
+    'access callback' => TRUE,
+    'file' => 'form_fun.cake.inc',
+    'type' => MENU_CALLBACK,
+  );
 
   return $items;
 }

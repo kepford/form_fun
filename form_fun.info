@@ -2,5 +2,5 @@
 name = FormAPI Fun
 description = Crazy, crazy form tricks.
 core = 6.x
-package = Example
+package = Lullabot Examples
 dependencies[] = devel

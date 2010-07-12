@@ -74,13 +74,13 @@ function form_fun_cake_submit(&$form, &$form_state) {
   $choice = $form_state['values']['choice'];
   switch ($choice) {
     case 'cake':
-      $form_state['redirect'] = 'http://tinyurl.com/pq3ya';
+      $form_state['redirect'] = 'form_fun/cake_image';
       break;
     case 'death':
-      $form_state['redirect'] = 'http://tinyurl.com/3bmxla';
+      $form_state['redirect'] = 'form_fun/death_image';
       break;
     case 'chicken':
-      $form_state['redirect'] = 'http://tinyurl.com/34h68j';
+      $form_state['redirect'] = 'form_fun/chicken_image';
       break;
   }
 }
@@ -91,4 +91,26 @@ function form_fun_cake_submit(&$form, &$form_state) {
  */
 function form_fun_cake_equivocate(&$form, &$form_state) {
   drupal_set_message(t('Make up your mind!'), 'warning');
+}
+
+/**
+ * Return a page consisting of a cake image.
+ */
+function form_fun_cake_image() {
+  return "<img src='http://megan.kiwi.gen.nz/NappyCake/NappyCake.jpg' />";
+}
+
+
+/**
+ * Return a page consisting of a 'death' image (Wiley Coyote).
+ */
+function form_fun_death_image() {
+	return "<img src='http://starphoenixbase.com/wp-content/uploads/2006/10/coyote-06.jpg' />";
+}
+
+/**
+ * Return a page consisting of a chicken image.
+ */
+function form_fun_chicken_image() {
+	 return "<img src='http://www.arenaflowers.com/product_image/large/600-mohican_chicken.jpg' />";
 }
