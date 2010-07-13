@@ -42,6 +42,7 @@ function form_fun_more_submit(&$form, &$form_state) {
 
 function form_fun_more_more(&$form, &$form_state) {
   $form_state['storage'] = $form_state['values']['addresses'];
+  $form_state['rebuild'] = TRUE;
 }
 
 
@@ -68,6 +69,7 @@ function form_fun_address_fields($values = array()) {
       'pobox' => t('Post office box'),
       'other' => t('Other address'),
     ),
+    '#title' => t('Address type'),
     '#default_value' => $values['addresstype'],
   );
   $address_fields['street'] = array(
