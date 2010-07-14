@@ -46,6 +46,10 @@ function form_fun_cake(&$form_state) {
     '#type' => 'submit',
     '#value' => t('Equivocate'),
     '#submit' => array('form_fun_cake_equivocate'),
+
+    // No validation at all is required in the equivocate case, so
+    // we include this here to make it skip the form-level validator.
+    '#validate' => array(),
   );
 
   return $form;
