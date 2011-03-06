@@ -51,22 +51,6 @@ function form_fun_menu() {
     'weight' => 4,
   );
 
-  $items['form_fun/ahah'] = array(
-    'title' => "All sorts of magic",
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('form_fun_ahah'),
-    'access arguments' => array('access content'),
-    'file' => 'form_fun.ahah.inc',
-    'weight' => 5,
-  );
-
-  $items['form_fun/ahah_callback'] = array(
-    'page callback' => 'form_fun_ahah_callback',
-    'access arguments' => array('access content'),
-    'file' => 'form_fun.ahah.inc',
-    'type' => MENU_CALLBACK,
-  );
-
   $items['form_fun/blam'] = array(
     'title' => "Blam!",
     'page callback' => 'drupal_get_form',
