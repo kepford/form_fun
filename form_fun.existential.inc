@@ -4,6 +4,10 @@
  * ================== Form State demonstration ==================
  */
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_existential(&$form_state) {
   $form['identity'] = array(
     '#type' => 'fieldset',
@@ -34,6 +38,10 @@ function form_fun_existential(&$form_state) {
   return $form;
 }
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_existential_submit(&$form, &$form_state) {
   dsm($form_state);
 }

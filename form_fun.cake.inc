@@ -20,7 +20,7 @@ function form_fun_cake_page() {
  * $form_state will contain information that has been accumulated in previous
  * steps.
  */
-function form_fun_cake(&$form_state) {
+function form_fun_cake($form, &$form_state) {
   $form['choice'] = array(
     '#type' => 'select',
     '#title' => t('Cake or death'),
@@ -38,7 +38,7 @@ function form_fun_cake(&$form_state) {
     '#type' => 'submit',
     '#value' => t('Submit'),
   );
-  
+
   // Because the 'unsure' button has a #submit property, that function
   // will be called if it is clicked instead of the form's default
   // submit handler.
@@ -109,12 +109,12 @@ function form_fun_cake_image() {
  * Return a page consisting of a 'death' image (Wiley Coyote).
  */
 function form_fun_death_image() {
-	return "<img src='http://starphoenixbase.com/wp-content/uploads/2006/10/coyote-06.jpg' />";
+  return "<img src='http://starphoenixbase.com/wp-content/uploads/2006/10/coyote-06.jpg' />";
 }
 
 /**
  * Return a page consisting of a chicken image.
  */
 function form_fun_chicken_image() {
-	 return "<img src='http://www.arenaflowers.com/product_image/large/600-mohican_chicken.jpg' />";
+  return "<img src='http://www.arenaflowers.com/product_image/large/600-mohican_chicken.jpg' />";
 }

@@ -4,13 +4,17 @@
  * ================== Multi-step form demonstration ==================
  */
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_more(&$form_state) {
   $form['#tree'] = TRUE;
 
   // If we have stored values from a previous step, re-create
   // the fields for address and populate them properly.
   if (!empty($form_state['storage'])) {
-    foreach($form_state['storage'] as $key => $values) {
+    foreach ($form_state['storage'] as $key => $values) {
       $form['addresses'][] = form_fun_address_fields($values);
     }
   }
@@ -32,6 +36,10 @@ function form_fun_more(&$form_state) {
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_more_submit(&$form, &$form_state) {
   unset($form_state['storage']);
   drupal_set_message(t('Your addresses were submitted!'));
@@ -40,6 +48,10 @@ function form_fun_more_submit(&$form, &$form_state) {
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_more_more(&$form, &$form_state) {
   $form_state['storage'] = $form_state['values']['addresses'];
   $form_state['rebuild'] = TRUE;
@@ -47,6 +59,10 @@ function form_fun_more_more(&$form, &$form_state) {
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_address_fields($values = array()) {
   $values += array(
     'addresstype' => 'home',

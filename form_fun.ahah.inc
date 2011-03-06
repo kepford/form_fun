@@ -43,14 +43,18 @@ function form_fun_ahah_callback() {
   $addresses = $form['addresses'];
   $index = count(element_children($addresses)) - 1;
   unset($addresses['#prefix'], $addresses['#suffix']); // Prevent duplicate wrappers.
-  $addresses[$index]['#attributes']['class'] = empty($addresses[$index]['#attributes']['class']) ? 'ahah-new-content' : $addresses[$index]['#attributes']['class'] .' ahah-new-content';
+  $addresses[$index]['#attributes']['class'] = empty($addresses[$index]['#attributes']['class']) ? 'ahah-new-content' : $addresses[$index]['#attributes']['class'] . ' ahah-new-content';
   $output = drupal_render($addresses);
 
   // Convert the resulting output to a format
-  drupal_json(array('status' => TRUE, 'data' => $output));
+  drupal_json_output(array('status' => TRUE, 'data' => $output));
 }
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_ahah(&$form_state) {
   // This is new! We've wrapped all of the addresses in a hard-coded
   // CSS ID so that jQuery can find the group of addresses easily.
@@ -63,7 +67,7 @@ function form_fun_ahah(&$form_state) {
   // If we have stored values from a previous step, re-create
   // the fields for address and populate them properly.
   if (!empty($form_state['storage']['addresses'])) {
-    foreach($form_state['storage']['addresses'] as $key => $values) {
+    foreach ($form_state['storage']['addresses'] as $key => $values) {
       $form['addresses'][] = form_fun_address_fields($values);
     }
   }
@@ -95,6 +99,10 @@ function form_fun_ahah(&$form_state) {
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_ahah_submit(&$form, &$form_state) {
   unset($form_state['storage']['addresses']);
   drupal_set_message(t('Your addresses were submitted!'));
@@ -103,12 +111,20 @@ function form_fun_ahah_submit(&$form, &$form_state) {
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_ahah_more(&$form, &$form_state) {
   $form_state['storage']['addresses'] = $form_state['values']['addresses'];
 }
 
 
 
+/**
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
 function form_fun_address_fields($values = array()) {
   $values += array(
     'addresstype' => 'home',

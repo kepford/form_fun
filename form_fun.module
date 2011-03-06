@@ -75,21 +75,21 @@ function form_fun_menu() {
     'file' => 'form_fun.ahah.inc',
     'type' => MENU_CALLBACK,
   );
-  
+
   $items['form_fun/death_image'] = array(
     'page callback' => 'form_fun_death_image',
     'access callback' => TRUE,
     'file' => 'form_fun.cake.inc',
     'type' => MENU_CALLBACK,
   );
-  
+
   $items['form_fun/cake_image'] = array(
     'page callback' => 'form_fun_cake_image',
     'access callback' => TRUE,
     'file' => 'form_fun.cake.inc',
     'type' => MENU_CALLBACK,
   );
-  
+
   $items['form_fun/chicken_image'] = array(
     'page callback' => 'form_fun_chicken_image',
     'access callback' => TRUE,
@@ -112,7 +112,7 @@ function form_fun_page() {
   $links[] = l(t('Gimmie more (Multi-step forms)'), 'form_fun/more');
   $links[] = l(t('Magic! (AHAH-powered forms)'), 'form_fun/ahah');
 
-  return theme('item_list', $links);
+  return theme('item_list', array('items' => array('items' => $links)));
 }
 
 
