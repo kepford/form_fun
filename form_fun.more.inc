@@ -8,7 +8,7 @@
  * @todo Please document this function.
  * @see http://drupal.org/node/1354
  */
-function form_fun_more(&$form_state) {
+function form_fun_more(&$form, &$form_state) {
   $form['#tree'] = TRUE;
 
   // If we have stored values from a previous step, re-create
