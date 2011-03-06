@@ -112,7 +112,7 @@ function form_fun_page() {
   $links[] = l(t('Gimmie more (Multi-step forms)'), 'form_fun/more');
   $links[] = l(t('Magic! (AHAH-powered forms)'), 'form_fun/ahah');
 
-  return theme('item_list', array('items' => array('items' => $links)));
+  return theme('item_list', array('items' => $links));
 }
 
 
