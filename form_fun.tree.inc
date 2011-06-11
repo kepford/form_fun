@@ -8,7 +8,7 @@
  * @todo Please document this function.
  * @see http://drupal.org/node/1354
  */
-function form_fun_tree(&$form_state) {
+function form_fun_tree(&$form, &$form_state) {
   $form['#tree'] = TRUE;
 
   $form['home'] = array(

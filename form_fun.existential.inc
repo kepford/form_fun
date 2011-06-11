@@ -8,7 +8,7 @@
  * @todo Please document this function.
  * @see http://drupal.org/node/1354
  */
-function form_fun_existential(&$form_state) {
+function form_fun_existential(&$form, &$form_state) {
   $form['identity'] = array(
     '#type' => 'fieldset',
     '#title' => t('Existential questions'),

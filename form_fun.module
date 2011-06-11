@@ -60,13 +60,13 @@ function form_fun_menu() {
     'weight' => 5,
   );
 
-  $items['form_fun/blam'] = array(
-    'title' => "Blam!",
+  $items['form_fun/dynamo'] = array(
+    'title' => "Dynamo!",
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('form_fun_blam_form'),
+    'page arguments' => array('form_fun_dynamo_form'),
     'access arguments' => array('access content'),
-    'file' => 'form_fun.blam.inc',
-    'weight' => 5,
+    'file' => 'form_fun.ajax.inc',
+    'weight' => 6,
   );
 
   /**
@@ -107,9 +107,8 @@ function form_fun_page() {
   $links[] = l(t('Existential questions (Peeking at form state!)'), 'form_fun/existential');
   $links[] = l(t("I'm lost! (Nested form elements)"), 'form_fun/tree');
   $links[] = l(t('Gimmie more (Multi-step forms)'), 'form_fun/more');
-  $links[] = l(t('Magic! (AHAH-powered forms)'), 'form_fun/ahah');
   $links[] = l(t('Blam! (States examples)'), 'form_fun/blam');
-  $links[] = l(t('Blam! (States examples)'), 'form_fun/blam');
+  $links[] = l(t('Dynamo! (AJAX powered forms)'), 'form_fun/dynamo');
 
   return theme('item_list', array('items' => $links));
 }
