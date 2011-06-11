@@ -60,6 +60,19 @@ function form_fun_menu() {
     'weight' => 5,
   );
 
+  $items['form_fun/blam'] = array(
+    'title' => "Blam!",
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('form_fun_blam_form'),
+    'access arguments' => array('access content'),
+    'file' => 'form_fun.blam.inc',
+    'weight' => 5,
+  );
+
+  /**
+   * These menu callbacks should be ignored! They're secret. Suuuuuuper secret.
+   */
+
   $items['form_fun/death_image'] = array(
     'page callback' => 'form_fun_death_image',
     'access callback' => TRUE,
@@ -96,6 +109,7 @@ function form_fun_page() {
   $links[] = l(t('Gimmie more (Multi-step forms)'), 'form_fun/more');
   $links[] = l(t('Magic! (AHAH-powered forms)'), 'form_fun/ahah');
   $links[] = l(t('Blam! (States examples)'), 'form_fun/blam');
+  $links[] = l(t('Blam! (States examples)'), 'form_fun/blam');
 
   return theme('item_list', array('items' => $links));
 }
@@ -113,7 +127,7 @@ function form_fun_page() {
  * validation handler to it.
  */
 function form_fun_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'user_register') {
+  if ($form_id = 'user_profile_form' && isset($form['account']['pass'])) {
     $form['#validate'][] = 'form_fun_user_register_validate';
   }
 }
@@ -130,6 +144,6 @@ function form_fun_user_register_validate(&$form, &$form_state) {
   $password = drupal_strtolower($form_state['values']['pass']);
 
   if (in_array($password, $really_stupid_passwords)) {
-    form_set_error('pass', t('Seriously? You that was a good password?'));
+    form_set_error('pass', t('Seriously? You %pass was a good password?', array('%pass' => $password)));
   }
 }
