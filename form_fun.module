@@ -126,6 +126,8 @@ function form_fun_page() {
  * validation handler to it.
  */
 function form_fun_form_alter(&$form, &$form_state, $form_id) {
+  drupal_set_message($form_id);
+
   if ($form_id = 'user_profile_form' && isset($form['account']['pass'])) {
     $form['#validate'][] = 'form_fun_user_register_validate';
   }
