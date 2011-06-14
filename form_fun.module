@@ -60,15 +60,6 @@ function form_fun_menu() {
     'weight' => 5,
   );
 
-  $items['form_fun/dynamo'] = array(
-    'title' => "Dynamo!",
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('form_fun_dynamo_form'),
-    'access arguments' => array('access content'),
-    'file' => 'form_fun.ajax.inc',
-    'weight' => 6,
-  );
-
   /**
    * These menu callbacks should be ignored! They're secret. Suuuuuuper secret.
    */
